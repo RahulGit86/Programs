@@ -14,6 +14,7 @@
 //       ' ### '
 //       '#####'
 
+
 function pyramid(n, midPoint = 0,row=0,cnt=0){
 if(midPoint === 0){
    midPoint  = Math.floor((n*2 -1)/2);

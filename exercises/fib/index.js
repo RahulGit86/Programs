@@ -31,11 +31,26 @@ function fib2(n){
 	}
 	return arr[n];
 }
+function memoize(fnc){
+	const cache = [];
+	return function(...args){
+		
+		if(cache[args]){
+			return cache[args];
+		}
+		const result =  fnc.apply(this,args);
+		cache[args] = result;
+		return result;
+	};
+}
 function fib(n){
 	if(n < 2)
 		return n;
 	else
 		return fib(n-2) + fib(n-1); 	
 }
+
+
+ fib = memoize(fib);
 
 module.exports = fib;
